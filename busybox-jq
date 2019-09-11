@@ -6,4 +6,4 @@ else
   _ttyflag="-t"
 fi
 
-docker run -i $_ttyflag busybox-jq "$*"
+docker run -i $_ttyflag wesleydeanflexion/busybox-jq "$*"
