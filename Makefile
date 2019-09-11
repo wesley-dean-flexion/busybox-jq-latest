@@ -1,6 +1,8 @@
 #!/usr/bin/env make
 
-tag ?= busybox-jq
+DOCKER_TAG ?= busybox-jq
+
+tag ?= $(shell if [ ! "${DOCKER_USERNAME}" = "" ] ; then echo -n "${DOCKER_USERNAME}/" ; fi ; echo "${DOCKER_TAG}")
 
 .DEFAULT: all
 .PHONY: all image clean
