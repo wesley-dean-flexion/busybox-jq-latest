@@ -42,7 +42,7 @@ https://hub.docker.com/r/wesleydeanflexion/busybox-jq
 This is a convenient (to me) way to use 'jq' on systems where jq is not installed
 but Docker is (and we can pull / run Docker images).
 
-## Who (wrote this)?  
+## Who (wrote this)?
 
 My role in this is just to build and slap in 'jq'; the fine authors of BusyBox
 and JQ did the real heavy lifting.
