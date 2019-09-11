@@ -1,6 +1,6 @@
 #!/usr/bin/env make
 
-tag ?= busybox-jq-latest
+tag ?= busybox-jq
 
 .DEFAULT: all
 .PHONY: all image clean
