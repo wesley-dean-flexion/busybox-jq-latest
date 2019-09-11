@@ -5,12 +5,8 @@ before_install:
 
 script:
   - make all
-
-deploy:
-  provider: script
-  script: 
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-    - docker push "$DOCKER_USERNAME/$DOCKER_TAG"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push "$DOCKER_USERNAME/$DOCKER_TAG"
 
 git:
   submodules: true
