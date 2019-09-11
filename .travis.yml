@@ -1,7 +1,10 @@
 language: c
 
 before_install:
-  - sudo apt-get -fy install autotools bison git make gcc
+  - sudo apt-get -fy install autotools-dev bison git make gcc
+  - make all
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push "$DOCKER_USERNAME/$DOCKER_TAG"
 
 git:
   submodules: true
@@ -9,4 +12,3 @@ git:
 services:
   - docker
 
-  
