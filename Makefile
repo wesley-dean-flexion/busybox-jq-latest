@@ -16,7 +16,7 @@ context/jq_version.txt: context context/jq
 	context/jq --version > context/jq_version.txt
 
 jq/jq:
-	cd jq && git submodule update --init && autoreconf -fi && ./configure --disable-docs --disable-maintainer-mode && make -j8 LDFLAGS=-all-static && strip jq && cp jq ../context/ && cd ..
+	git submodule update --init && cd jq && git submodule update --init && git checkout -f tags/`git tag -l | grep -Ev '[0-9]rc' | tail -1` && autoreconf -fi && ./configure --disable-docs --disable-maintainer-mode && make -j8 LDFLAGS=-all-static && strip jq && cp jq ../context/ && cd ..
 
 busybox:
 	if docker pull busybox | grep -qi downloaded ; then make context/busybox_version.txt ; fi
