@@ -9,8 +9,8 @@ tag ?= $(shell if [ ! "${DOCKER_USERNAME}" = "" ] ; then echo -n "${DOCKER_USERN
 
 all: image
 
-image: context busybox context/jq context/jq_version.txt context/busybox_version.txt context/Dockerfile
-	cd context && docker build  --label jq_version="$(shell cat context/jq_version.txt)" --label busybox_version="$(shell cat context/busybox_version.txt)" --label build_datetime="$(shell date +%Y%m%d-%H%M%S)"  -t $(tag) . && cd ..
+image: context/jq_version.txt context/busybox_version.txt context/Dockerfile
+	cd context && docker build  --label jq_version="$(shell cat context/jq_version.txt)" --label busybox_version="$(shell cat context/busybox_version.txt)" --label build_datetime="$(shell date +%Y%m%d-%H%M%S)" -t $(tag) . && cd ..
 
 context/jq_version.txt: context context/jq
 	context/jq --version > context/jq_version.txt
@@ -34,7 +34,7 @@ context:
 	mkdir context
 
 test: image
-	echo '{ "hello":"world" }' | docker run $(tag) .
+	echo '{ "hello":"world" }' | docker run -i --rm $(tag) .
 
 clean:
 	docker image rmi $(tag) ; rm -rf context ; ( cd jq && make clean ) ; cd .. && find . -name "*~" -delete
