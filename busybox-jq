@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if tty | grep -qi 'not a tty' ; then
-  _ttyflag=""
-else
-  _ttyflag="-t"
-fi
-
-docker run -i $_ttyflag wesleydeanflexion/busybox-jq "$*"

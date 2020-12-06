@@ -1,3 +1,0 @@
-[submodule "jq"]
-	path = jq
-	url = https://github.com/stedolan/jq.git
