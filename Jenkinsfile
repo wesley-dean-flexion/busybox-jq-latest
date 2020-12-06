@@ -3,13 +3,13 @@ pipeline {
     parameters {
         string (
             name: 'image_name',
-            defaultValue: 'wesleydeanflexion/tfsec',
+            defaultValue: 'wesleydeanflexion/busybox-jq',
             description: 'the name of the image to tag / push'
         )
 
         string (
             name: 'repository_url',
-            defaultValue: 'https://github.com/wesley-dean-flexion/tfsec_docker.git',
+            defaultValue: 'https://github.com/wesley-dean-flexion/busybox-jq-latest.git',
             description: 'the URL of the Git repository'
         )
 
