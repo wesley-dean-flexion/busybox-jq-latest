@@ -1,26 +1,26 @@
 # busybox-jq-latest
 
-## What (is it)?
+## What this is
 
 This is a daily-built (via cron job) of the latest and greatest BusyBox with JQ.
 
-## How (do I use it)?
+## How to use this
 
 The 'jq' binary is set as the entrypoint for the image, so it can be run by piping
 JSON content to Docker Run:
 
-```
-$ cat file.json | docker run -it --rm wesleydeanflexion/busybox-jq '.'
+```sh
+cat file.json | docker run -it --rm wesleydeanflexion/busybox-jq '.'
 ```
 
 Alternatively, I've included a script, 'busybox-jq' that does the above (plus
 the requesite 'tty' magic), so this will accomplish the same thing:
 
-```
-$ cat file.json | ./busybox-jq '.'
+```sh
+cat file.json | ./busybox-jq '.'
 ```
 
-### How (is this built)?
+### How this is built
 
 The build will:
 
@@ -35,21 +35,21 @@ The included .travis.yml file may be used to perform the build using Travis-CI
 and push the resulting image up to Docker Hub.  That said, I've daily builds
 setup so you're welcome to use mine:
 
-https://hub.docker.com/r/wesleydeanflexion/busybox-jq
+[https://hub.docker.com/r/wesleydeanflexion/busybox-jq]
 
-## Why (did you do this)?
+## Why this exists
 
 This is a convenient (to me) way to use 'jq' on systems where jq is not installed
 but Docker is (and we can pull / run Docker images).
 
-## Who (wrote this)?
+## Who wrote this
 
 My role in this is just to build and slap in 'jq'; the fine authors of BusyBox
 and JQ did the real heavy lifting.
 
-* https://github.com/mirror/busybox
-* https://github.com/stedolan/jq
+* [https://github.com/mirror/busybox]
+* [https://github.com/stedolan/jq]
 
-Me, I'm an Embedded Liaison and DevOps Engineer with Flexion:
+Me, I'm a DevSecOps Engineer with Flexion:
 
-* https://flexion.us/
+* [https://flexion.us/]
