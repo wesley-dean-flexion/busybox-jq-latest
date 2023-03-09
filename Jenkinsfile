@@ -61,15 +61,15 @@ pipeline {
             }
         }
 
-        stage('Publish') {
-            steps {
-                script {
-                    docker.withRegistry( '', docker_credential) {
-                        dockerImage.push("$BUILD_NUMBER")
-                        dockerImage.push('latest')
-                    }
-                }
-            }
-        }
+#        stage('Publish') {
+#            steps {
+#                script {
+#                    docker.withRegistry( '', docker_credential) {
+#                        dockerImage.push("$BUILD_NUMBER")
+#                        dockerImage.push('latest')
+#                    }
+#                }
+#            }
+#        }
     }
 }
