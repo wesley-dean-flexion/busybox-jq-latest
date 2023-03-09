@@ -1,7 +1,7 @@
 FROM alpine:3.17.2 AS builder
 
 # renovate: datasource=repology depName=alpine_3_17/git versioning=loose
-ENV GIT_VERSION="2.38.4-r0"
+ENV GIT_VERSION="2.38.4-r1"
 
 # renovate: datasource=repology depName=alpine_3_17/autoconf versioning=loose
 ENV AUTOCONF_VERSION="2.71-r1"
