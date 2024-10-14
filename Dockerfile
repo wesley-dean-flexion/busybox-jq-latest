@@ -34,7 +34,7 @@ RUN git submodule update --init \
   && strip jq
 
 # hadolint ignore=DL3007
-FROM busybox:1.35.0
+FROM busybox:1.37.0
 COPY --from=builder /workdir/jq/jq /bin/
 RUN chmod 755 /bin/jq
 USER nobody
