@@ -1,4 +1,4 @@
-FROM alpine:3.17.2 AS builder
+FROM alpine:3.20.3 AS builder
 
 # renovate: datasource=repology depName=alpine_3_17/git versioning=loose
 ENV GIT_VERSION="2.38.4-r1"
