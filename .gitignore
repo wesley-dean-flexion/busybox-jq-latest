@@ -1,0 +1,9 @@
+.config/sublime-text-3/
+*~
+*.lock
+*.backup
+*.tmp
+tmp*
+Desktop/
+reports
+megalinter-reports/

@@ -39,3 +39,4 @@ COPY --from=builder /workdir/jq/jq /bin/
 RUN chmod 755 /bin/jq
 USER nobody
 ENTRYPOINT [ "/bin/jq" ]
+HEALTHCHECK NONE

@@ -10,6 +10,8 @@ on:
   workflow_dispatch:
 
 
+permissions: read-all
+
 env:
   # Comment env block if you do not want to apply fixes
   # Apply linter fixes configuration
@@ -24,9 +26,8 @@ concurrency:
 jobs:
   build:
     name: MegaLinter
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
+    runs-on: ubuntu-22.04
+    permissions: write-all
 
     steps:
       # Git Checkout
@@ -40,11 +41,11 @@ jobs:
       - name: MegaLinter
         id: ml
         # You can override MegaLinter flavor used to have faster performances
-        # More info at https://oxsecurity.github.io/megalinter/flavors/
+        # More info at https://megalinter.io/latest/flavors/
         uses: oxsecurity/megalinter/flavors/ci_light@bacb5f8674e3730b904ca4d20c8bd477bc51b1a7 # pin@v7
         env:
           # All available variables are described in documentation
-          # https://oxsecurity.github.io/megalinter/configuration/
+          # https://megalinter.io/latest/configuration/
           VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
