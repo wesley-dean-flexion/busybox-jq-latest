@@ -55,7 +55,7 @@ jobs:
           # Upload MegaLinter artifacts
       - name: Archive production artifacts
         if: ${{ success() }} || ${{ failure() }}
-        uses: actions/upload-artifact@ff15f0306b3f739f7b6fd43fb5d26cd321bd4de5 # pin@v3
+        uses: actions/upload-artifact@184d73b71b93c222403b2e7f1ffebe4508014249 # pin@v3
         with:
           name: MegaLinter reports
           path: |
