@@ -1,15 +1,13 @@
 ---
-
 name: Publish
 
 # yamllint disable-line rule:truthy
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   workflow_dispatch:
   schedule:
-    - cron: '30 4 * * *'
-
+    - cron: "30 4 * * *"
 
 permissions: read-all
 
