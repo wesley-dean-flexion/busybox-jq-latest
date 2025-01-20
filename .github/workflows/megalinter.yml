@@ -9,7 +9,6 @@ on:
   pull_request:
   workflow_dispatch:
 
-
 permissions: read-all
 
 env:
@@ -54,7 +53,7 @@ jobs:
 
           # Upload MegaLinter artifacts
       - name: Archive production artifacts
-        if: ${{ success() }} || ${{ failure() }}
+        if: always()
         uses: actions/upload-artifact@184d73b71b93c222403b2e7f1ffebe4508014249 # pin@v3
         with:
           name: MegaLinter reports
